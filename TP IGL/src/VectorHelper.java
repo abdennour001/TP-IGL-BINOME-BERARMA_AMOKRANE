@@ -4,6 +4,20 @@ import java.util.ArrayList;
  * Created by DELL on 14/10/2017.
  */
 public class VectorHelper {
+    
+    ArrayList<Integer> TriVect(ArrayList<Integer> V) {
+        int  n  =  V.size() - 1 ;
+        for (  int  i  =  n ;  i >= 1 ;  i -- )
+            for (  int  j  =  2 ;  j <= i ;  j ++ )
+                if ( V.get(j - 1)  >  V.get(j) )
+                {
+                    int  temp  =  V.get(j - 1) ;
+                    V.set(j - 1, V.get(j)) ;
+                    V.set(j, temp);
+                }
+        return V;
+    }
+    
     ArrayList InvVect (ArrayList V){
         ArrayList RES = new ArrayList();
         for (int i=0 ; i< V.size();i++){
